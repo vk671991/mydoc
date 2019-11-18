@@ -1,2 +1,2 @@
-# Myco-Doc
+# MyDoc
 Doctor Engagement Activity App
