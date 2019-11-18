@@ -1,0 +1,48 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="/gallery"></ion-back-button>
+		</ion-buttons>
+		<ion-title>
+			Records
+		</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-searchbar *ngIf="recordArr?.length != 0" (ionChange)="filterDoc($event)" animated></ion-searchbar>
+	<ion-row *ngIf="recordArr?.length == 0">
+		<div class="logo-wrap mb-30" style="text-align: center">
+			<img src="assets/images/no-results.png" style="width:40%">
+			<p class="noresult" justify-content-center>
+				No Activities Performent Yet.</p>
+		</div>
+	</ion-row>
+	<!-- <ion-list lines="none">
+		<ion-item *ngFor="let list of recordArr">
+			{{list.drname}}
+			<div class="item-note" slot="end">
+				<ion-icon class="icon-view" (click)="shareModal(list.selectedpreview)" name="md-share"></ion-icon>
+			</div>
+			<div class="item-note" slot="end">
+				<ion-icon class="icon-view" (click)="viewModal(list.selectedpreview)" name="eye"></ion-icon>
+			</div>
+		</ion-item>
+	</ion-list> -->
+
+	<ion-card class="ion-no-margin cat-card mb-15" *ngFor="let list of recordArr">
+		<ion-card-content>
+			<ion-item lines="none" no-padding>
+				<ion-thumbnail slot="start">
+					<img src="assets/images/doctor.jpg">
+				</ion-thumbnail>
+				<ion-label>{{list.drname}}</ion-label>
+				<div class="item-note" slot="end">
+					<ion-icon class="icon-view" (click)="shareModal(list.selectedpreview)" name="md-share"></ion-icon>
+					<ion-icon class="icon-view" (click)="viewModal(list.selectedpreview)" name="eye"></ion-icon>
+				</div>
+			</ion-item>
+		</ion-card-content>
+	</ion-card>
+</ion-content>

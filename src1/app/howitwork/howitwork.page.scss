@@ -1,0 +1,19 @@
+
+ion-list {
+    padding-bottom: 0;
+    padding-top: 0;
+    ion-item {
+    //   --ion-background-color: #f3f6f8;
+    //   --background-hover: #fff;
+      color: #696969;
+      border-bottom: 1px solid #ccc;
+      --padding-start: 15px;
+      font-size: 15px;
+      ion-icon{
+          margin-right: 10px;
+          font-size: 24px;
+          color: #969696;
+      }
+    }
+  }
+  

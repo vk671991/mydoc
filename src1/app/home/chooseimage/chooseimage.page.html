@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+          Select Doctor Image 
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-card class="no-shadow ion-no-margin">
+      <ion-card-content>
+        <ion-img *ngIf="base64Image"  [src]="base64Image"></ion-img>
+        <ion-row *ngIf="!base64Image" justify-content-center>Select Image to Preview</ion-row>
+      
+        <div class="mt-30">
+            <ion-button (click)="selectImage()" expand="block" color="secondary" class="ion-no-margin btn-rounded mb-15">
+                Select Image</ion-button>
+            <ion-button *ngIf="base64Image" (click)="proceed()" expand="block" class="btn-rounded margin-right mb-15">Proceed</ion-button>
+            <ion-button (click)="skip()" expand="block" class="btn-rounded">Skip</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  
+  </ion-content>

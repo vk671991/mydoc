@@ -1,0 +1,164 @@
+// http://ionicframework.com/docs/theming/
+@import "~@ionic/angular/css/core.css";
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+.mt-30 {
+  margin-top: 30px !important;
+}
+
+.mt-15 {
+  margin-top: 15px !important;
+}
+
+.mb-30 {
+  margin-bottom: 30px !important;
+}
+
+.mb-15 {
+  margin-bottom: 15px !important;
+}
+
+.no-shadow{
+  box-shadow: none;
+}
+
+.pt-0{
+  padding-top: 0 !important;
+}
+
+.pt-15{
+  padding-top: 15px !important;
+}
+
+.pt-30{
+  padding-top: 30px !important;
+}
+
+.pb-0{
+  padding-bottom: 0px !important;
+}
+
+.pb-15{
+  padding-bottom: 15px !important;
+}
+
+.pb-30{
+  padding-bottom: 30px !important;
+}
+
+ion-button.btn-rounded {
+  box-shadow: 0 4px 10px #ccc;
+  border-radius: 30px;
+  overflow: hidden;
+  --opacity: 0.8;
+  max-width: 300px;
+  height: 44px;
+  margin: 0 auto;
+}
+
+ion-content {
+  --background: #f3f6f8;
+}
+
+ion-content.transparent-bg {
+  --background: transparent;
+}
+
+.full-height-card {
+  box-shadow: none;
+  border: 0px solid #06377c;
+  border-radius: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  justify-content: center;
+  .logo-wrap {
+    text-align: center;
+    max-width: calc(100% - 50px);
+    margin: 0 auto;
+    z-index: 1;
+    img {
+      display: inline-block;
+      max-width: 100%;
+    }
+  }
+  ion-item {
+    --ion-background-color: #f3f6f8;
+  }
+}
+
+body {
+  --color: #131313;
+}
+
+ion-menu-button{
+  font-size: 1.75em;
+}
+
+ion-card.cat-card {
+  --background: #fff;
+  box-shadow: 0 4px 10px #ccc;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+ion-header {
+  ion-toolbar {
+    --background: #06377c;
+    --color: #fff;
+    ion-title {
+      font-size: 16px;
+    }
+    ion-back-button, ion-menu-button{
+      --color: #fff !important;
+    }
+  }
+  &.transparent-bg{
+    ion-toolbar {
+      --background: transparent;
+      --color: #06377c;
+    }
+    ion-back-button, ion-menu-button{
+      --color: #06377c !important;
+    }
+    &:after{
+      background-image: none;
+    }
+  }
+}
+
+.action-sheet-button.sc-ion-action-sheet-md{
+  height: 40px;
+  color: #06377c;
+  &:hover{
+    background-color: #f3f6f8;
+  }
+}
+
+.bg-custom-img:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: linear-gradient(
+    197deg,
+    rgb(234, 235, 241) 0%,
+    rgba(249, 249, 251, 0.4) 13.5%,
+    rgba(247, 244, 244, 0.75) 33.33%,
+    rgba(243, 244, 247, 0.8) 100%
+  ) !important;
+}

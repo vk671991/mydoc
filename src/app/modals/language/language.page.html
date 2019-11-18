@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Select Language
+    </ion-title>
+    <ion-buttons  class="close-icon" (click)="dismiss()" slot="end" large>
+        <ion-icon name="close-circle"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="submitLanguage()" #languageForm="ngForm">
+ <ion-list>
+    <ion-radio-group [(ngModel)]="language" [ngModelOptions]="{standalone: true}">
+      <ion-item>
+        <ion-label>English</ion-label>
+        <ion-radio value="english"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Marathi</ion-label>
+        <ion-radio value="marathi"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Hindi</ion-label>
+        <ion-radio value="hindi"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Asmese</ion-label>
+        <ion-radio value="Asmese"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Bengali</ion-label>
+        <ion-radio value="Bengali"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Kannada</ion-label>
+        <ion-radio value="Kannada"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Oriya</ion-label>
+        <ion-radio value="Oriya"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Malayalam </ion-label>
+        <ion-radio value="Malyam"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Telgu</ion-label>
+        <ion-radio value="Telgu"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Tamil</ion-label>
+        <ion-radio value="Tamil"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Gujarati</ion-label>
+        <ion-radio value="Gujrati"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+  <ion-row justify-content-center>
+    <ion-button type="submit" [disabled]="!language">Select</ion-button>
+  </ion-row>
+</form>
+
+
+</ion-content>

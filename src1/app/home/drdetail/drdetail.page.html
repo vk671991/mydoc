@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Doctor Details
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <form (ngSubmit)="submit()" #detailForm="ngForm">
+      <ion-row class="cust-row">
+        <ion-col class="cust-col">
+          <ion-list>
+            <ion-item class="ion-no-padding">
+              <ion-label position="floating">Doctor Name</ion-label>
+              <ion-input type="text" name="name" [(ngModel)]="detailinfo.name" [ngModelOptions]="{standalone: true}"
+                required></ion-input>
+            </ion-item>
+  
+            <ion-item class="ion-no-padding">
+              <ion-label position="floating">Enter more information here...</ion-label>
+              <ion-textarea [(ngModel)]="detailinfo.info" [ngModelOptions]="{standalone: true}"></ion-textarea>
+            </ion-item>
+  
+          </ion-list>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row class="cust-row" justify-content-center>
+        <ion-col class="cust-col pt-0">
+          <ion-button expand="block" class="ion-no-margin btn-rounded" type="submit" [disabled]="!detailForm.form.valid">
+            Submit</ion-button>
+        </ion-col>
+      </ion-row>
+  
+    </form>
+  
+  </ion-content>

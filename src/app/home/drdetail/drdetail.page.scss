@@ -1,0 +1,15 @@
+.welcome-card img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+.cust-row{
+  .cust-col{
+    padding: 20px 26px;
+    ion-list{
+      background: #f3f6f8;
+      ion-item{
+        --background: #f3f6f8;
+      }
+    }
+  }
+}

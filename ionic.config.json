@@ -1,0 +1,7 @@
+{
+  "name": "DoctorEngagementActivity",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

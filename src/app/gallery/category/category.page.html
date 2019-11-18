@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Gallery
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="ion-no-margin cat-card mb-15" *ngFor="let category of categoryList"
+      [routerLink]="['titlelist/'+category.id]">
+  
+      <ion-card-content>
+  
+        <ion-item lines="none" no-padding>
+          <ion-thumbnail slot="start">
+            <ion-icon name="list-box"></ion-icon>
+          </ion-thumbnail>
+          <ion-label>{{category.name}}</ion-label>
+          <ion-icon class="arrow" name="arrow-forward"></ion-icon>
+        </ion-item>
+  
+      </ion-card-content>
+    </ion-card>
+  </ion-content>

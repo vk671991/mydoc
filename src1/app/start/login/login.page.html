@@ -1,0 +1,67 @@
+<ion-header class="transparent-bg">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="transparent-bg bg-custom-img">
+  <ion-card class="full-height-card">
+    <!-- <div class="logo-wrap">
+      <img src="assets/images/logo.png">
+    </div> -->
+    <ion-card-content>
+      <form (ngSubmit)="login()" #registerForm="ngForm">
+        <h4 class="title text-center">Login Here</h4>
+        <ion-item class="ion-no-padding">
+          <ion-label position="floating">Employee Id</ion-label>
+          <ion-input type="text" name="employee_id"
+            [(ngModel)]="registerCredentials.employee_id" required></ion-input>
+        </ion-item>
+        <div class="ion-no-padding ion-no-border login-pin">
+          <ion-label position="stacked">4 Digit Pin</ion-label>
+          <div class="otp-container" id="otp-container">
+            <div class="input-box">
+              <ion-input class="pin" name="pass1" #a (keyup)="moveFocus($event,b,'')"
+                (input)="inputInsideOtpInput($event.target)" [(ngModel)]="registerCredentials.password1" required
+                maxlength="1" type="password"></ion-input>
+            </div>
+            <div class="input-box">
+              <ion-input class="pin" name="pass2" #b (keyup)="moveFocus($event,c,a)"
+                (input)="inputInsideOtpInput($event.target)" [(ngModel)]="registerCredentials.password2" required
+                maxlength="1" type="password"></ion-input>
+            </div>
+            <div class="input-box">
+              <ion-input class="pin" name="pass3" #c (keyup)="moveFocus($event,d,b)"
+                (input)="inputInsideOtpInput($event.target)" [(ngModel)]="registerCredentials.password3" required
+                maxlength="1" type="password"></ion-input>
+            </div>
+            <div class="input-box">
+              <ion-input class="pin" name="pass4" #d (keyup)="moveFocus($event,'',c)"
+                (input)="inputInsideOtpInput($event.target)" [(ngModel)]="registerCredentials.password4" required
+                maxlength="1" type="password"></ion-input>
+            </div>
+          </div>
+        </div>
+
+        <div class="ion-no-padding mt-30">
+          <ion-button expand="block" type="submit" class="ion-no-margin btn-rounded"
+            >Login
+          </ion-button>
+        </div>
+
+        <div class="ion-no-padding mt-15">
+          <ion-button color="secondary" (click)="passwordForgot()" expand="block" type="button"
+            class="ion-no-margin btn-rounded">Forgot Password
+          </ion-button>
+        </div>
+
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

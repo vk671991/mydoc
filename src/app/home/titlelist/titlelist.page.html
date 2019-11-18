@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Events
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="ion-no-margin cat-card mb-15" *ngFor="let events of eventList"
+    [routerLink]="['/home/sampleview/'+events.id+'/'+categoryid]">
+    <ion-card-content>
+      <ion-item lines="none" no-padding>
+        <ion-thumbnail slot="start">
+          <ion-icon name="medal"></ion-icon>
+        </ion-thumbnail>
+        <ion-label>{{events.list}}</ion-label>
+        <ion-icon class="arrow" name="arrow-forward"></ion-icon>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="full-height-card" *ngIf="eventList?.length == 0">
+    <ion-card-content>
+      <div class="logo-wrap" style="text-align: center">
+        <img src="assets/images/no-results.png" style="width:40%">
+        <p class="noresult" justify-content-center>
+          No Events Available Right Now.</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

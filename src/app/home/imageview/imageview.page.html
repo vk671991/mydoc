@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Event Image
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngIf="eventsImage"><img class="loading" style="height: auto;" [src]="eventImg+eventsImage.image">
+  </div>
+  <div *ngIf="!eventsImage">
+    <div class="logo-wrap mb-30">
+      <img src="assets/images/no-results.png">
+    </div>
+    <p class="noresult">
+      No Event Image Availiable For this Language.
+      Please Select Another Language.</p>
+  </div>
+  <div class="btn-wrapper mt-30">
+    <ion-button expand="block" class="ion-no-margin btn-rounded mb-15" color="secondary" (click)="languageModal()"
+      expand="block">Change Language</ion-button>
+    <ion-button expand="block" class="ion-no-margin btn-rounded" (click)="proceed()">Proceed</ion-button>
+  </div>
+</ion-content>

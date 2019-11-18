@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-row justify-content-center>
+        <ion-row justify-content-center>
+        <div *ngIf="categoryList?.length == 0" class="loading">Sorry! No Events Available Right Now.</div>
+    </ion-row>
+  </ion-row>
+  <ion-card class="ion-no-margin cat-card mb-15" *ngFor="let category of categoryList"
+    [routerLink]="['titlelist/'+category.id]">
+
+    <ion-card-content>
+
+      <ion-item lines="none" no-padding>
+        <ion-thumbnail slot="start">
+          <ion-icon name="medkit"></ion-icon>
+        </ion-thumbnail>
+        <ion-label>{{category.name}}</ion-label>
+        <ion-icon class="arrow" name="arrow-forward"></ion-icon>
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+  <!-- <ion-card class="card-box ion-no-margin">
+      <ion-card-content class="ion-no-padding">
+        <ion-item lines="none">
+          <ion-label class="ion-no-margin">Total Doctor Today</ion-label>
+          <ion-badge slot="end">22</ion-badge>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card class="card-box ion-no-margin">
+      <ion-card-content class="ion-no-padding">
+        <ion-item lines="none">
+          <ion-label class="ion-no-margin">Total Doctor Last Week</ion-label>
+          <ion-badge slot="end">22</ion-badge>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card class="card-box ion-no-margin">
+      <ion-card-content class="ion-no-padding">
+        <ion-item lines="none">
+          <ion-label class="ion-no-margin">Total Doctor Till Date</ion-label>
+          <ion-badge slot="end">22</ion-badge>
+        </ion-item>
+      </ion-card-content>
+    </ion-card> -->
+  </ion-content>

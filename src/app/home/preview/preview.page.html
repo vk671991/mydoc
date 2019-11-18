@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Preview
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div>
+    <div *ngIf="previewFile === null" class="loading">Please wait while image is being generated.</div>
+    <img *ngIf="previewFile != null" [src]="pdfURL()" alt="preview-image">
+  </div>
+  <div class="btn-wrapper mt-30">
+    <ion-button expand="block" class="ion-no-margin btn-rounded" (click)="submitPreview()">Submit</ion-button>
+  </div>
+</ion-content>

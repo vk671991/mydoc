@@ -1,0 +1,103 @@
+<ion-header class="transparent-bg">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Register
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="transparent-bg bg-custom-img">
+  <ion-card class="full-height-card">
+
+      <div class="logo-wrap">
+          <img src="assets/images/logo.png">
+        </div>
+
+    <ion-card-content>
+
+      
+
+      <form (ngSubmit)="step1submit()" #step1Form="ngForm" *ngIf="step1">
+        <h4 class="title text-center">Register</h4>
+        <ion-item class="ion-no-padding">
+          <ion-label position="floating">Employee Id</ion-label>
+          <ion-input type="text" name="employee_id" [(ngModel)]="step1Credentials.employee_id" required></ion-input>
+        </ion-item>
+
+        <div class="ion-no-padding mt-30">
+          <ion-button type="submit" expand="block" class="ion-no-margin btn-rounded">
+            Submit</ion-button>
+        </div>
+
+      </form>
+
+      <form (ngSubmit)="step2submit()" #step2Form="ngForm" *ngIf="step2">
+        <h4 class="title text-center">Register</h4>
+        <ion-item class="ion-no-padding">
+          <ion-label position="floating">Email Id</ion-label>
+          <ion-input type="text" name="email" [(ngModel)]="step2Credential.email" required>
+          </ion-input>
+        </ion-item>
+        <ion-item class="ion-no-padding">
+          <ion-label position="floating">Phone Number</ion-label>
+          <ion-input type="number" pattern="[0-9]*" name="phone" [(ngModel)]="step2Credential.phone" required>
+          </ion-input>
+        </ion-item>
+
+        <div class="ion-no-padding mt-30">
+          <ion-button expand="block" class="ion-no-margin btn-rounded" type="submit">
+            Submit</ion-button>
+        </div>
+
+      </form>
+
+      <form (ngSubmit)="step3submit()" #step3Form="ngForm" *ngIf="step3">
+        <h4 class="title text-center">Verify LOGIN PIN</h4>
+        <div class="ion-no-padding ion-no-border login-pin">
+          <ion-label position="stacked">4 Digit Pin</ion-label>
+
+          <div class="otp-container">
+            <div class="input-box">
+              <ion-input class="box-otp" name="a" [(ngModel)]="step3Credential.otp1" #a (keyup)="moveFocus($event,b,'')" type="tel"
+                maxlength="1" required>
+              </ion-input>
+            </div>
+
+            <div class="input-box">
+              <ion-input class="box-otp" name="b" [(ngModel)]="step3Credential.otp2" #b (keyup)="moveFocus($event,c,a)" type="tel"
+                maxlength="1" required>
+              </ion-input>
+            </div>
+
+            <div class="input-box">
+              <ion-input class="box-otp" name="c" [(ngModel)]="step3Credential.otp3" #c (keyup)="moveFocus($event,d,b)" type="tel"
+                maxlength="1" required>
+              </ion-input>
+            </div>
+
+            <div class="input-box">
+              <ion-input class="box-otp" name="d" [(ngModel)]="step3Credential.otp4" #d (keyup)="moveFocus($event,'',c)" type="tel"
+                maxlength="1" required>
+              </ion-input>
+            </div>
+          </div>
+          <ion-label>Note: We have shared login pin to your email. Please verify it.</ion-label>
+          
+        </div>
+
+        <div class="ion-no-padding mt-30">
+          <ion-button type="submit" expand="block" class="ion-no-margin btn-rounded">
+            Submit</ion-button>
+        </div>
+
+      </form>
+
+    </ion-card-content>
+
+  </ion-card>
+
+
+
+</ion-content>
